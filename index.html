@@ -23,9 +23,11 @@ layout: default
 		{% endfor %}
 	</ul>
 	</section><!-- // grid-wrap -->
-
+	
+	<!-- NA: I'd like to remove the slideshow feature, but I guess we'll have to figure out how to do this later--> 
 	<section class="slideshow">
-	<ul>
+	
+    <ul>
 		{% for post in site.posts %}
 		<li>
 			<figure>
@@ -41,7 +43,9 @@ layout: default
 		<span class="icon nav-close"></span>
 	</nav>
 	<div class="info-keys icon">Navigate with arrow keys</div>
-	</section><!-- // slideshow -->
 
+	</section>
+	<!-- // slideshow --> 
+	
 	</div><!-- // grid-gallery -->
 </div>
