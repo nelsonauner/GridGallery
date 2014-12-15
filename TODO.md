@@ -1,0 +1,3 @@
+- reduce margins
+- elimate slideshow effect
+- on click go to explanation page
