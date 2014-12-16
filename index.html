@@ -14,10 +14,10 @@ layout: default
 		<li>
 			<figure>
 				<img src="{{ site.url }}/img/thumb/{{ post.photo }}" alt="img"/>
-				<!--<figcaption>
-					<h3>{{ post.caption_header}}</h3>
-					<p>{{ post.caption }}</p>
-				</figcaption>
+                <!--    <figcaption>
+				    	<h3>{{ post.caption_header}}</h3>
+				    	eliminate caption <p>{{ post.caption }}</p> 
+				    </figcaption>
                 -->
 			</figure>
 		</li>
@@ -25,16 +25,16 @@ layout: default
 	</ul>
 	</section><!-- // grid-wrap -->
 	
-	<!-- NA: I'd like to remove the slideshow feature, but I guess we'll have to figure out how to do this later--> 
-	<section class="slideshow">
+
+    <section class="slideshow">
 	
     <ul>
 		{% for post in site.posts %}
-		<li>
-			<figure>
+		<li> 
+            <figure>
 				<img src="{{ site.url }}/img/large/{{ post.photo }}" alt="img"/>
 				<figcaption><h3>{{ post.caption_header}}</h3><p>{{ post.caption }}</p></figcaption>
-			</figure>
+			</figure>            
 		</li>
 		{% endfor %}
 	</ul>
@@ -47,6 +47,6 @@ layout: default
 
 	</section>
 	<!-- // slideshow --> 
-	
+
 	</div><!-- // grid-gallery -->
 </div>
