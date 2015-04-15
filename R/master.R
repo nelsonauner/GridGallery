@@ -19,18 +19,18 @@ scripts <-  scripts[sapply(scripts,
                  !(strsplit(x,".R") %in% alreadyPosted)
                  })]
 
-
 # iterate over all valid scripts and produce graphics
 for (i in 1:length(scripts)) {
     currentScript <- paste0("./YourCodeHere/",scripts[i])
     print("processing")
-    source("head.R")
-    setwd(paste0(baseDir,
-                 "/YourCodeHere/"))
-    print(getwd())
+png(file=paste0("../img/thumb/",scripts[i],".png"),width = 200,height=200)
+    setwd("YourCodeHere")
     source(scripts[i])
-    setwd(baseDir)
-    source("foot.R")
+    setwd("../")
+dev.off()
     file.copy(from=currentScript,to=paste0("./processedCode/",scripts[i]))
-    file.remove(currentScript)
+    #file.remove(currentScript)
+    #no need to remove
 }
+
+
