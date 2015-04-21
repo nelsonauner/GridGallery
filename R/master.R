@@ -3,6 +3,7 @@ baseDir <- getwd()
 # find names of scripts placed in YourCodeHere
 substrRight <- function(x, n=2){substr(x, nchar(x)-n+1, nchar(x))}
 scripts <- dir("./YourCodeHere/")
+print(scripts)
 
 # scripts should be executed under the following conditions:
 #     - must end in ".R"
@@ -23,10 +24,14 @@ scripts <-  scripts[sapply(scripts,
 for (i in 1:length(scripts)) {
     currentScript <- paste0("./YourCodeHere/",scripts[i])
     print("processing")
-png(file=paste0("../img/thumb/",scripts[i],".png"),width = 200,height=200)
-    setwd("YourCodeHere")
-    source(scripts[i])
-    setwd("../")
+png(file=paste0("../img//",scripts[i],".png"),width = 400,height=400)
+scriptContents <- readChar(currentScript, file.info(currentScript)$size)
+print(scriptContents)
+setwd("./YourCodeHere/") #you have to do this so that the scripts can access local assets... 
+eval(parse(scriptContents))
+
+
+setwd("../")
 dev.off()
     file.copy(from=currentScript,to=paste0("./processedCode/",scripts[i]))
     #file.remove(currentScript)
