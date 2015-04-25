@@ -2,7 +2,6 @@ name: R Graph Gallery
 markdown: redcarpet
 highlighter: pygments
 permalink: /:year/:month/:title/
-url: http://nadjetey.github.io/GridGallery/
 author:
     name: Nelson Auner
     twitter: #
