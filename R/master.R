@@ -17,13 +17,16 @@ makeGraphic <- function(code) {
   #no need to remove
 }
 
-isDate(character) {
+isDate <- function(string) {
   # http://www.regexr.com/3ast2
   # input: a character vector of an entire code file
   # ideally 'codeText' object from makePost
   # output: the jekyll-friendly object corresponding to the string #date: 
-  grep(pattern =".*?[#][ ]*?(?i)date(?-i):[ ]*?[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}",test)
+  grepl(pattern =".*?[#][ ]*?(?i)date(?-i):[ ]*?[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2}",codeText)
+    pattern="^([[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2})"
+  gsub("[^0-9-]", "", string)
 }
+isDate <- Vectorize(isDate)
 
 makePost <- function(code) {
 # input: code (right now, path to file) that produces a graph
